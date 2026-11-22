@@ -1,6 +1,6 @@
 # Catatan discovery
 
-Status: wawancara berlangsung; scope belum disetujui. Belum ada keputusan stack.
+Status: review D1 diterima; draft D2 menunggu approval eksplisit. Belum ada keputusan stack.
 
 ## Fakta terkonfirmasi dari pengguna
 - Pengguna awal satu keluarga, termasuk orang tua dan anak; peluang banyak keluarga di masa depan dengan isolasi data keluarga.
@@ -19,12 +19,12 @@ Status: wawancara berlangsung; scope belum disetujui. Belum ada keputusan stack.
 - Konfirmasi Admin untuk tugas tertentu sebelum pemberian poin.
 - Riwayat penyelesaian, saldo poin, katalog dan penukaran reward.
 
-## Usulan untuk dikonfirmasi
+## Usulan awal — historis, ditindaklanjuti pada jawaban berikutnya
 - Mulai dari tugas yang ditetapkan Admin; pengambilan tugas bebas ditunda.
 - Mulai dari interval sejak penyelesaian yang sah; kalender tetap ditunda.
-- Poin tetap per tugas; reward dikelola manual di luar aplikasi pada MVP.
+- Poin tetap per tugas; usulan awal reward di luar aplikasi kemudian direvisi: katalog, permintaan dan keputusan masuk MVP, hanya pemenuhan di luar aplikasi.
 
-## Pertanyaan lanjutan terbuka
+## Pertanyaan lanjutan awal — sudah dijawab pada putaran kedua
 - Akses tiap anggota di perangkat bersama/pribadi, serta kebutuhan akun anak tanpa email.
 - Persetujuan atas batas awal penugasan dan penjadwalan interval.
 - Kebutuhan penukaran reward dalam aplikasi dan aturan verifikasi penyelesaian.
@@ -36,4 +36,13 @@ Status: wawancara berlangsung; scope belum disetujui. Belum ada keputusan stack.
 - Pengguna menginginkan katalog reward, permintaan Member, keputusan Parent; pemenuhan manual. Minta evaluasi kompleksitas dan alternatif sebelum scope final.
 - Pengguna meminta draft D1 untuk review, melarang pemilihan stack dan lanjut UX sebelum approval eksplisit.
 
-Draft scope dan aturan usulan tersedia di `docs/PRODUCT.md` revisi D1. Catatan ini bukan bukti approval; discovery menunggu review/approval, tahap lain belum dimulai.
+## Review D1 dan permintaan revisi D2
+- Pengguna menyetujui arah MVP dan rekomendasi U-01–U-05 dengan penegasan; meminta D2 dan approval eksplisit terpisah sebelum UX.
+- Reward tetap mencakup katalog, permintaan dan keputusan Parent. Tidak mereservasi saldo; UI wajib menyatakan reward belum dijamin sebelum disetujui.
+- Pembatalan hanya penyelesaian terbaru yang belum diikuti pengajuan berikutnya. Koreksi boleh membuat saldo negatif; Parent wajib melihat peringatan serta dampak sebelum konfirmasi.
+- Maksimal satu pengajuan pending per occurrence; tidak membuat occurrence berikutnya saat pending. Verifikasi diri Parent diperbolehkan dengan audit trail.
+- Interval dari waktu sah; waktu pengajuan dan persetujuan ditampilkan terpisah.
+- Metrik pilot adalah hipotesis evaluasi, bukan jaminan keberhasilan.
+- Identitas proyek: `household-task-management`.
+
+Draft terkini: `docs/PRODUCT.md` revisi D2; baseline D1: `docs/history/PRODUCT-D1.md`. Catatan ini bukan approval D2; discovery tetap waiting_approval, tahap lain pending.
