@@ -7,3 +7,7 @@ node_modules/
 dist/
 .workflow/*.tmp
 .workflow/runs/
+# Local UX review tools and runtime (dummy feedback stays local)
+.workflow/tools/
+.workflow/lavish/
+.lavish-axi/

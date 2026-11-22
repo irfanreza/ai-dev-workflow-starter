@@ -1,0 +1,17 @@
+{
+  "scope": "Task form at 1280x900, actual agent-browser press Shift+Tab, Tab, Escape",
+  "initial_focus": "Tutup dialog",
+  "after_shift_tab": {
+    "dialogOpen": true,
+    "focusInside": true,
+    "active": "BUTTON"
+  },
+  "after_tab": {
+    "focusInside": true,
+    "first": true
+  },
+  "after_escape": {
+    "dialogClosed": true,
+    "focusRestored": true
+  }
+}

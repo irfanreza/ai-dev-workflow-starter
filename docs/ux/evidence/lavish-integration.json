@@ -1,0 +1,15 @@
+{
+  "session": "http://127.0.0.1:57123/session/3d632bebb71c9593",
+  "dummy_message": "[UJI INTEGRASI LOKAL — bukan feedback pengguna atau approval] Verifikasi pengiriman dummy dari browser ke CLI untuk prototype R1.",
+  "delivery": {
+    "status": "feedback",
+    "prompt_count": 1,
+    "tag": "message"
+  },
+  "reply": {
+    "status": "sent"
+  },
+  "user_feedback": false,
+  "ux_approval": false,
+  "automatic_listener_active_at_handoff": false
+}

@@ -3,14 +3,15 @@
   "project_name": "household-task-management",
   "stages": {
     "discovery": "completed",
-    "ux": "pending",
+    "ux": "waiting_approval",
     "architecture": "pending",
     "implementation": "pending",
     "qa": "pending",
     "release": "pending"
   },
   "evidence": {
-    "discovery": "approved: User explicitly approved household-task-management PRODUCT D2 including MVP, Must/Should/Could, acceptance criteria, U-01 through U-05, non-goals and risks. Evidence: docs/PRODUCT-D2-APPROVAL.md; spec: docs/PRODUCT.md; baseline commit: 150b888. User instructed stop after validation; do not start UX."
+    "discovery": "approved: User explicitly approved household-task-management PRODUCT D2 including MVP, Must/Should/Could, acceptance criteria, U-01 through U-05, non-goals and risks. Evidence: docs/PRODUCT-D2-APPROVAL.md; spec: docs/PRODUCT.md; baseline commit: 150b888. User instructed stop after validation; do not start UX.",
+    "ux": "Prototype R2 revised after user Lavish feedback UX-001: replace confusing sah wording with task-completed or Parent-approved wording. Not yet approved. Evidence: docs/ux/feedback.md; docs/ux/R2-review.md; artifact and SHA-256: docs/ux/revision.json. R1 archived in docs/ux/history/R1.html. Stop at UX review; architecture remains pending."
   },
   "decisions": []
 }

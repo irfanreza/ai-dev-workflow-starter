@@ -1,0 +1,11 @@
+{
+  "revision": "R1",
+  "product_spec": "docs/PRODUCT.md D2",
+  "artifact": "docs/ux/prototype/index.html",
+  "sha256": "2c411c847401a96752a848a19309a7329b39e9dec1c402306ef1a4c8c6e12038",
+  "assets": "All styles and scripts embedded; no external assets",
+  "status": "awaiting_user_review",
+  "approved": false,
+  "review_adapter": "lavish-axi@0.1.98",
+  "recorded_at_utc": "2026-11-22T11:53:07.906602+00:00"
+}

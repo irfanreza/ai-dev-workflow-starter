@@ -1,0 +1,936 @@
+[
+  {
+    "role": "p",
+    "page": "home",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 53,
+          "incomplete": 1,
+          "passes": 36,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 4,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25a5</div>",
+                "target": [
+                  "article:nth-child(1) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25d2</div>",
+                "target": [
+                  "article:nth-child(2) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25d2</div>",
+                "target": [
+                  "article:nth-child(3) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "p",
+    "page": "tasks",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 54,
+          "incomplete": 1,
+          "passes": 35,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 6,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25d2</div>",
+                "target": [
+                  "article:nth-child(1) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25a5</div>",
+                "target": [
+                  "article:nth-child(2) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u274b</div>",
+                "target": [
+                  "article:nth-child(3) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25d2</div>",
+                "target": [
+                  "article:nth-child(4) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25a5</div>",
+                "target": [
+                  "article:nth-child(5) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "p",
+    "page": "verify",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 54,
+          "incomplete": 1,
+          "passes": 35,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "p",
+    "page": "history",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 50,
+          "incomplete": 1,
+          "passes": 39,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "p",
+    "page": "rewards",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 54,
+          "incomplete": 1,
+          "passes": 35,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 3,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"rewardart\" aria-hidden=\"true\">\u25b7</div>",
+                "target": [
+                  "article:nth-child(1) > .rewardart[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"rewardart\" aria-hidden=\"true\">\u2726</div>",
+                "target": [
+                  "article:nth-child(3) > .rewardart[aria-hidden=\"true\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "p",
+    "page": "family",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 53,
+          "incomplete": 1,
+          "passes": 36,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "n",
+    "page": "home",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 54,
+          "incomplete": 1,
+          "passes": 35,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 4,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25d2</div>",
+                "target": [
+                  "article:nth-child(1) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u274b</div>",
+                "target": [
+                  "article:nth-child(2) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25a5</div>",
+                "target": [
+                  "article:nth-child(3) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "n",
+    "page": "tasks",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 54,
+          "incomplete": 1,
+          "passes": 35,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 4,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25d2</div>",
+                "target": [
+                  "article:nth-child(1) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u274b</div>",
+                "target": [
+                  "article:nth-child(2) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"taskicon\" aria-hidden=\"true\">\u25a5</div>",
+                "target": [
+                  "article:nth-child(3) > .taskicon[aria-hidden=\"true\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "n",
+    "page": "history",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 50,
+          "incomplete": 1,
+          "passes": 39,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "role": "n",
+    "page": "rewards",
+    "viewport": "360x800",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 54,
+          "incomplete": 1,
+          "passes": 35,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 3,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"rewardart\" aria-hidden=\"true\">\u25b7</div>",
+                "target": [
+                  "article:nth-child(1) > .rewardart[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"rewardart\" aria-hidden=\"true\">\u2726</div>",
+                "target": [
+                  "article:nth-child(3) > .rewardart[aria-hidden=\"true\"]"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "view": "task-form",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 67,
+          "incomplete": 0,
+          "passes": 22,
+          "violations": 0
+        },
+        "incomplete": [],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "view": "cancel-negative",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 65,
+          "incomplete": 0,
+          "passes": 24,
+          "violations": 0
+        },
+        "incomplete": [],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "view": "reward-review",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 66,
+          "incomplete": 0,
+          "passes": 23,
+          "violations": 0
+        },
+        "incomplete": [],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  },
+  {
+    "view": "review-tools",
+    "report": {
+      "success": true,
+      "data": {
+        "axeVersion": "4.12.1",
+        "counts": {
+          "inapplicable": 51,
+          "incomplete": 1,
+          "passes": 38,
+          "violations": 0
+        },
+        "incomplete": [
+          {
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodeCount": 4,
+            "nodes": [
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<span class=\"brandmark\" aria-hidden=\"true\">\u2302</span>",
+                "target": [
+                  ".brandmark"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"rewardart\" aria-hidden=\"true\">\u25b7</div>",
+                "target": [
+                  "article:nth-child(1) > .rewardart[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "html": "<div class=\"rewardart\" aria-hidden=\"true\">\u2726</div>",
+                "target": [
+                  "article:nth-child(3) > .rewardart[aria-hidden=\"true\"]"
+                ]
+              },
+              {
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements",
+                "html": "<div id=\"toast\" class=\"toast\" role=\"status\" aria-live=\"polite\">Saldo Nara 10; batalkan penyelesaian 30 poin untuk melihat \u221220.</div>",
+                "target": [
+                  "#toast"
+                ]
+              }
+            ],
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ]
+          }
+        ],
+        "lifecycle": {
+          "effectiveLaunch": {
+            "browserLaunched": true,
+            "engine": "chrome",
+            "launchHash": 11677035664275010974
+          },
+          "launched": false,
+          "relaunchedBrowser": false,
+          "restartedBackground": false,
+          "restoreStatus": "not_configured",
+          "reused": true,
+          "saveStatus": "not_attempted"
+        },
+        "url": "file:///home/irfan/playground/ai-dev-workflow-regression/docs/ux/prototype/index.html",
+        "violations": []
+      },
+      "error": null
+    }
+  }
+]

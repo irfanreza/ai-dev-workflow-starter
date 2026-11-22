@@ -1,0 +1,3 @@
+Feedback tentang “sejak sah” sudah diterapkan pada R2. Jadwal kini berbunyi “sejak tugas selesai” untuk tugas tanpa verifikasi, dan “sejak disetujui Parent” untuk tugas yang perlu verifikasi. Istilah “sah” di status, riwayat, dan penjelasan lain juga diganti sesuai konteks. Aturan poin dan jadwal tetap sama.
+
+15 skenario lulus pada mobile dan desktop. Silakan review R2; feedback ini belum dianggap approval UX.

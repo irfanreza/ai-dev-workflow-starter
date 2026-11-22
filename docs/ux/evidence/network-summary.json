@@ -1,0 +1,7 @@
+{
+  "scope": "Lavish browser session during local integration; not an OS-wide traffic audit",
+  "request_count": 22,
+  "origins": [
+    "127.0.0.1:57123"
+  ]
+}

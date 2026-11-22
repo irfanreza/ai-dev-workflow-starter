@@ -1,6 +1,6 @@
 # Catatan discovery
 
-Status: spesifikasi D2 disetujui eksplisit; discovery completed. Belum ada keputusan stack. Instruksi pengguna: jangan mulai UX dahulu.
+Status terkini: spesifikasi D2 disetujui eksplisit; discovery completed. Pengguna kemudian mengizinkan UX prototype dan Lavish lokal; UX pada review R2. Belum ada keputusan stack atau approval UX. Instruksi berhenti sebelumnya tersimpan sebagai riwayat di bawah.
 
 ## Fakta terkonfirmasi dari pengguna
 - Pengguna awal satu keluarga, termasuk orang tua dan anak; peluang banyak keluarga di masa depan dengan isolasi data keluarga.
@@ -49,3 +49,14 @@ Status: spesifikasi D2 disetujui eksplisit; discovery completed. Belum ada keput
 - Pengguna menyetujui eksplisit spesifikasi D2, scope MVP, Must/Should/Could, acceptance criteria, U-01–U-05, non-goals dan risiko.
 - Evidence persetujuan: `docs/PRODUCT-D2-APPROVAL.md`; spesifikasi disetujui: `docs/PRODUCT.md` D2; baseline D1 tetap `docs/history/PRODUCT-D1.md`.
 - Pengguna meminta transisi discovery completed, validasi, lalu berhenti tanpa memulai UX. Tahap lain tetap pending; tunggu instruksi pengguna untuk memulai UX saat resume.
+
+## Otorisasi dan resume UX R1
+- Pengguna mengizinkan lanjut UX berdasarkan D2, seluruh journeys dan F Must dipetakan, prototype HTML responsif dengan data dummy, tanpa backend/database/stack produksi.
+- Pengguna mengizinkan pemeriksaan sumber dan instalasi/penggunaan Lavish AXI lokal setelah penjelasan perintah, dependensi, konsekuensi keamanan; tidak mengizinkan publikasi/upload. Evidence pemeriksaan: `docs/ux/lavish-review.md`.
+- Hasil: prototype review R1 `docs/ux/prototype/index.html`; pemetaan `docs/ux/coverage.md`; instruksi `docs/ux/README.md`; bukti `docs/ux/review.md`; identitas hash `docs/ux/revision.json`.
+- STOP di review UX. Feedback bukan approval; belum ada approval revisi. Jangan architecture atau UX completed sebelum persetujuan eksplisit artefak tertentu.
+
+## Feedback Lavish UX-001 → R2
+- Pengguna bingung istilah “sejak sah”, meminta kata yang lebih umum. Pesan diterima via poll, bukan approval.
+- R2 mengganti seluruh teks UI “sah” dengan selesai/disetujui Parent sesuai konteks; perilaku D2 tidak berubah.
+- Bukti `docs/ux/R2-review.md`; hash aktif `docs/ux/revision.json`; arsip R1 `docs/ux/history/R1.html`. Tetap berhenti pada review, tanpa approval UX atau architecture.
