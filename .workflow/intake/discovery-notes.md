@@ -1,6 +1,6 @@
 # Catatan discovery
 
-Status: review D1 diterima; draft D2 menunggu approval eksplisit. Belum ada keputusan stack.
+Status: spesifikasi D2 disetujui eksplisit; discovery completed. Belum ada keputusan stack. Instruksi pengguna: jangan mulai UX dahulu.
 
 ## Fakta terkonfirmasi dari pengguna
 - Pengguna awal satu keluarga, termasuk orang tua dan anak; peluang banyak keluarga di masa depan dengan isolasi data keluarga.
@@ -45,4 +45,7 @@ Status: review D1 diterima; draft D2 menunggu approval eksplisit. Belum ada kepu
 - Metrik pilot adalah hipotesis evaluasi, bukan jaminan keberhasilan.
 - Identitas proyek: `household-task-management`.
 
-Draft terkini: `docs/PRODUCT.md` revisi D2; baseline D1: `docs/history/PRODUCT-D1.md`. Catatan ini bukan approval D2; discovery tetap waiting_approval, tahap lain pending.
+## Approval D2 dan titik resume
+- Pengguna menyetujui eksplisit spesifikasi D2, scope MVP, Must/Should/Could, acceptance criteria, U-01–U-05, non-goals dan risiko.
+- Evidence persetujuan: `docs/PRODUCT-D2-APPROVAL.md`; spesifikasi disetujui: `docs/PRODUCT.md` D2; baseline D1 tetap `docs/history/PRODUCT-D1.md`.
+- Pengguna meminta transisi discovery completed, validasi, lalu berhenti tanpa memulai UX. Tahap lain tetap pending; tunggu instruksi pengguna untuk memulai UX saat resume.

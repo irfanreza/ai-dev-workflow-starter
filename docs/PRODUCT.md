@@ -1,8 +1,8 @@
 # Spesifikasi produk — D2
 
 Proyek: `household-task-management`.
-Revisi: D2, 22 November 2026. Status: **draft untuk review; approval D2 belum diberikan**.
-Dokumen ini mengusulkan scope MVP, bukan keputusan teknologi atau izin implementasi.
+Revisi: D2, 22 November 2026. Status: **disetujui eksplisit oleh pengguna**.
+Dokumen ini menetapkan scope MVP yang disetujui, bukan keputusan teknologi atau izin implementasi. Evidence: [approval D2](PRODUCT-D2-APPROVAL.md). Pernyataan status review di bagian historis berikut menggambarkan saat penyusunan D2; approval terkini dicatat di akhir dokumen.
 
 ## Catatan perubahan D1 → D2
 
@@ -183,8 +183,9 @@ Tidak memilih framework, backend, database, penyedia cloud, atau mekanisme auten
 
 ## Approval produk eksplisit
 
-- Revisi yang diminta direview: **D2**.
+- Revisi yang disetujui: **D2**.
 - Reviewer: pengguna/pemilik produk dalam percakapan ini.
-- Keputusan approval D2: **belum diberikan**; tanggal persetujuan: belum ada. Persetujuan arah MVP dalam review D1 dicatat sebagai masukan/konfirmasi keputusan, bukan izin melewati gate D2.
-- Pengguna dapat meminta revisi atau menyatakan “Saya menyetujui spesifikasi produk D2” secara eksplisit. Komentar/feedback tidak dihitung sebagai approval.
-- Setelah scope disetujui, lanjut ke UX prototype HTML, review browser, dan approval UX terpisah. Lavish AXI hanya dipasang dengan izin; gunakan fallback review browser manual bila tidak tersedia/tidak dipilih. Architecture memerlukan approval tersendiri sesudah UX; release readiness dan deployment produksi juga dibedakan.
+- Keputusan: **approved: spesifikasi produk D2**, 22 November 2026 (tanggal sesi). Mencakup scope MVP, prioritas Must/Should/Could, acceptance criteria, U-01–U-05, non-goals, dan risiko yang terdokumentasi.
+- Evidence dan kutipan persetujuan: [PRODUCT-D2-APPROVAL.md](PRODUCT-D2-APPROVAL.md). Persetujuan arah MVP pada review D1 tetap dibedakan dari approval D2 ini.
+- Instruksi terbaru pengguna: **jangan mulai UX dahulu**; catat approval, selesaikan discovery, validasi, lalu berhenti. Semua tahap berikutnya tetap pending. Resume menunggu instruksi pengguna untuk memulai UX.
+- Tahap UX nantinya memerlukan prototype HTML, review browser dan approval terpisah. Lavish AXI hanya dipasang dengan izin; fallback review browser manual tersedia. Architecture memerlukan approval tersendiri sesudah UX; release readiness dan deployment produksi juga dibedakan.

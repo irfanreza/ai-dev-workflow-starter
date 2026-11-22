@@ -2,13 +2,15 @@
   "version": 1,
   "project_name": "household-task-management",
   "stages": {
-    "discovery": "waiting_approval",
+    "discovery": "completed",
     "ux": "pending",
     "architecture": "pending",
     "implementation": "pending",
     "qa": "pending",
     "release": "pending"
   },
-  "evidence": {},
+  "evidence": {
+    "discovery": "approved: User explicitly approved household-task-management PRODUCT D2 including MVP, Must/Should/Could, acceptance criteria, U-01 through U-05, non-goals and risks. Evidence: docs/PRODUCT-D2-APPROVAL.md; spec: docs/PRODUCT.md; baseline commit: 150b888. User instructed stop after validation; do not start UX."
+  },
   "decisions": []
 }
