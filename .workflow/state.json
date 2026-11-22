@@ -2,7 +2,7 @@
   "version": 1,
   "project_name": null,
   "stages": {
-    "discovery": "pending",
+    "discovery": "waiting_approval",
     "ux": "pending",
     "architecture": "pending",
     "implementation": "pending",
