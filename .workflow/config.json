@@ -1,0 +1,22 @@
+{
+  "mode": "hybrid",
+  "entrypoints": [
+    "codex",
+    "chatgpt-handoff"
+  ],
+  "approval_required": [
+    "discovery",
+    "ux",
+    "architecture",
+    "release"
+  ],
+  "max_repair_attempts": 3,
+  "ux": {
+    "prototype_required_for_ui": true,
+    "review_adapter": "lavish",
+    "fallback": "manual-browser",
+    "auto_install_third_party": false,
+    "share_requires_approval": true
+  },
+  "production_deploy_requires_explicit_approval": true
+}
