@@ -2,12 +2,15 @@
 
 ## Starter workflow
 - [ ] Codex recognizes AGENTS.md and starts discovery from an empty project.
+- [ ] **For a vague new-product prompt, the first response asks 1–5 high-impact product questions and waits; it does not produce a full D1.**
+- [ ] For a sufficiently detailed prompt or handoff, Codex does not repeat already-answered questions.
 - [ ] A ChatGPT handoff can be ingested and validated without repeating accepted discovery.
 - [ ] Workflow routes new product, feature, bug, and refactor appropriately.
 - [ ] Stage state can be resumed and validated after session interruption.
 
 ## Discovery
-- [ ] Problem, target users, success metrics, MVP, non-goals and edge cases are documented.
+- [ ] Product spec records interview answers, confirmed facts and assumptions distinctly.
+- [ ] Problem, target users, success metrics, prioritized MVP, non-goals and edge cases are documented.
 - [ ] Functional and nonfunctional requirements have testable acceptance criteria.
 - [ ] Scope approval is recorded before architecture work.
 
