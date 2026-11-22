@@ -7,6 +7,8 @@ This repository starts as a **workflow workspace**, not an application. On each 
 4. Resume the existing stage rather than restarting completed work.
 5. Ask only blocking questions. Record assumptions and decisions explicitly.
 
+**Critical first-turn rule:** If a new-project request contains only a broad product idea, invoke `.codex/skills/product-discovery/SKILL.md`, ask 1–5 high-impact product discovery questions, and STOP for user answers. Do NOT generate a comprehensive D1 or request scope approval on the first turn. A detailed brief or approved imported handoff can skip already-answered questions.
+
 Rules:
 - Do not select a backend, database, framework, cloud provider, or architecture before assessing product constraints.
 - For user-facing UI, create a usable HTML prototype, review it in a browser, and obtain explicit UX approval **before implementation**. Read `.codex/skills/ux-prototype/SKILL.md`.
