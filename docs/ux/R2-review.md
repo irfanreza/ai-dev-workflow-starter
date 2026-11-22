@@ -1,3 +1,5 @@
+Revisi aktif sekarang **R3**; lihat [R3-review.md](R3-review.md). Dokumen berikut merekam R2 sebagai baseline historis, bukan approval.
+
 # Review UX R2 — perbaikan bahasa UX-001
 
 Status: **menunggu review pengguna, belum disetujui**. Feedback diambil dari Lavish melalui `scripts/ux-lavish.sh poll docs/ux/prototype/index.html --owner ux-r1-review`. Satu pesan diterima dan dibaca utuh, dicatat pada `feedback.md`.

@@ -1,0 +1,14 @@
+{
+  "revision": "R2",
+  "product_spec": "docs/PRODUCT.md D2",
+  "artifact": "docs/ux/prototype/index.html",
+  "sha256": "f34c5246879269c8c31d5d3bd05f819f7bcf9c6a2405180cd4aea8c0f5f9dda5",
+  "assets": "All styles and scripts embedded; no external assets",
+  "status": "awaiting_user_review",
+  "approved": false,
+  "review_adapter": "lavish-axi@0.1.98",
+  "recorded_at_utc": "2026-11-22T13:52:43.524444+00:00",
+  "previous_revision": "R1",
+  "previous_sha256": "2c411c847401a96752a848a19309a7329b39e9dec1c402306ef1a4c8c6e12038",
+  "change": "UX-001: replace sah with familiar, verification-specific wording; no business-rule change"
+}

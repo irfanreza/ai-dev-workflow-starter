@@ -1,4 +1,4 @@
-# Cakupan UX R1/R2 — household-task-management
+# Cakupan UX R1/R2/R3 — household-task-management
 
 Sumber: PRODUCT D2 disetujui. Status: untuk review, bukan approval. Seluruh data dummy.
 
@@ -45,3 +45,5 @@ Asumsi UX untuk review: nama tampilan “Ruang Bersama”, palet kertas hangat/h
 Target review: lebar 360px dan 1280px, keyboard/fokus, label, status dengan teks, pesan kesalahan, kontras. Uji pilot S-01–05 serta kinerja/security N-01/03/05 bukan hasil tahap ini.
 
 R2 mengubah bahasa UI sesuai UX-001 tanpa mengubah cakupan, aturan produk, atau interaksi D2. Istilah domain “sah” pada dokumen D2 tetap berlaku; UI memakai penjelasan selesai/disetujui Parent.
+
+R3 / UX-002 memperbaiki J6 dan F-14–F-16: ringkasan saldo/biaya tersimpan/kekurangan, Setujui disabled sebelum aksi jika kurang atau reward nonaktif, Tolak tetap tersedia pada pending, tanpa reservasi atau penolakan otomatis. Dialog memperbarui perubahan saldo/status dan memblokir keputusan usang untuk ditinjau ulang. Bukti terarah `R3-review.md`.

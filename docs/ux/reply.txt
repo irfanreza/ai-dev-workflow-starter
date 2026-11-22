@@ -1,3 +1,5 @@
-Feedback tentang “sejak sah” sudah diterapkan pada R2. Jadwal kini berbunyi “sejak tugas selesai” untuk tugas tanpa verifikasi, dan “sejak disetujui Parent” untuk tugas yang perlu verifikasi. Istilah “sah” di status, riwayat, dan penjelasan lain juga diganti sesuai konteks. Aturan poin dan jadwal tetap sama.
+R3 siap direview. Dialog reward sekarang menampilkan saldo terbaru, biaya tersimpan, dan kekurangan poin sebelum keputusan. Pada saldo 20 dan biaya 80, terlihat kurang 60 poin; Setujui nonaktif, Tolak tetap tersedia, dan permintaan tetap pending untuk ditinjau nanti.
 
-15 skenario lulus pada mobile dan desktop. Silakan review R2; feedback ini belum dianggap approval UX.
+Perubahan saldo/status memperbarui dialog tanpa menghapus alasan. Jika perubahan baru terdeteksi saat klik, keputusan belum diterapkan dan informasi terbaru perlu ditinjau ulang. Coba “Skenario review → Konflik reward”, lalu kontrol “Skenario review lokal” di dalam dialog untuk mensimulasikan saldo berubah.
+
+R2 sudah diarsipkan. Uji browser mobile/desktop, dua tab asli, serta Lavish sandbox lulus. Aturan D2 tetap sama; R3 belum dianggap disetujui.

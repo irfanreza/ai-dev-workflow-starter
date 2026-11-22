@@ -1,0 +1,15 @@
+{
+  "scope": "Insufficient reward dialog; actual agent-browser click, Shift+Tab, Tab, Escape",
+  "shiftTab": {
+    "focusInside": true,
+    "approveDisabled": true,
+    "focusedAction": "rewardReject"
+  },
+  "tab": {
+    "focusedLabel": "Tutup dialog"
+  },
+  "escape": {
+    "dialogClosed": true,
+    "focusedAction": "rewardReview"
+  }
+}

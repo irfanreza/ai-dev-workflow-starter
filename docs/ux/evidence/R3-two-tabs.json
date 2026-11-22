@@ -1,0 +1,40 @@
+{
+  "session": "household-ux-r3-tabs",
+  "results": [
+    {
+      "case": "Other Parent approves first reward; second dialog updates on real storage event",
+      "status": "PASS",
+      "observed": {
+        "open": true,
+        "disabled": true,
+        "balance": 20,
+        "deficit": true,
+        "reason": "Catatan yang dipertahankan",
+        "storageEvents": 2,
+        "pending": "pending"
+      }
+    },
+    {
+      "case": "Other tab simulation credits 60; approval becomes available without auto-approval",
+      "status": "PASS",
+      "observed": {
+        "enabled": true,
+        "balance": 80,
+        "pending": "pending",
+        "reason": "Catatan yang dipertahankan",
+        "storageEvents": 3
+      }
+    },
+    {
+      "case": "Decision in first tab disables stale decisions in second tab, no duplicate debit",
+      "status": "PASS",
+      "observed": {
+        "approved": "approved",
+        "balance": 0,
+        "approveDisabled": true,
+        "rejectDisabled": true
+      }
+    }
+  ],
+  "failed": 0
+}

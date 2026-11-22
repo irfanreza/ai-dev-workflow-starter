@@ -1,0 +1,58 @@
+{
+  "viewport": {
+    "width": 360,
+    "height": 800
+  },
+  "results": [
+    {
+      "label": "100 \u2192 20: second 80-point reward disabled before click, deficit 60, pending, no reservation",
+      "status": "PASS"
+    },
+    {
+      "label": "Insufficient funds: rejection remains available and requires reason, with no debit",
+      "status": "PASS"
+    },
+    {
+      "label": "Live balance fall: storage notification updates open dialog without losing typed reason",
+      "status": "PASS"
+    },
+    {
+      "label": "Balance becomes sufficient in open dialog: approval enabled, explicit decision applies once",
+      "status": "PASS"
+    },
+    {
+      "label": "Stale approval before notification: data refreshed and no decision applied",
+      "status": "PASS"
+    },
+    {
+      "label": "Balance changes while still sufficient: review latest impact before applying decision",
+      "status": "PASS"
+    },
+    {
+      "label": "Stored request cost preserved despite catalog price change",
+      "status": "PASS"
+    },
+    {
+      "label": "Reward disabled during review: approval disabled, rejection available",
+      "status": "PASS"
+    },
+    {
+      "label": "Other Parent has decided: show current status, no duplicate approval or rejection",
+      "status": "PASS"
+    },
+    {
+      "label": "Negative corrected balance: correct deficit, no reward approval",
+      "status": "PASS"
+    },
+    {
+      "label": "Transient decision failure: no partial debit and safe retry",
+      "status": "PASS"
+    },
+    {
+      "label": "Modal responsive width, explanatory association and live announcements",
+      "status": "PASS"
+    }
+  ],
+  "total": 12,
+  "failed": 0
+}

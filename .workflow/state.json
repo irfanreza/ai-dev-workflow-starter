@@ -11,7 +11,7 @@
   },
   "evidence": {
     "discovery": "approved: User explicitly approved household-task-management PRODUCT D2 including MVP, Must/Should/Could, acceptance criteria, U-01 through U-05, non-goals and risks. Evidence: docs/PRODUCT-D2-APPROVAL.md; spec: docs/PRODUCT.md; baseline commit: 150b888. User instructed stop after validation; do not start UX.",
-    "ux": "Prototype R2 revised after user Lavish feedback UX-001: replace confusing sah wording with task-completed or Parent-approved wording. Not yet approved. Evidence: docs/ux/feedback.md; docs/ux/R2-review.md; artifact and SHA-256: docs/ux/revision.json. R1 archived in docs/ux/history/R1.html. Stop at UX review; architecture remains pending."
+    "ux": "Prototype R3 prepared for review after user feedback UX-002: live reward balance/cost/deficit preview, disabled insufficient approval, pending preserved, stale-decision guard. Consistent with PRODUCT D2 F-14/F-15/F-16; not approved. Evidence: docs/ux/feedback.md and docs/ux/R3-review.md; artifact/hash: docs/ux/revision.json; R2 archive: docs/ux/history/R2.html. Stop at UX review; architecture remains pending."
   },
   "decisions": []
 }

@@ -1,6 +1,6 @@
 # Catatan discovery
 
-Status terkini: spesifikasi D2 disetujui eksplisit; discovery completed. Pengguna kemudian mengizinkan UX prototype dan Lavish lokal; UX pada review R2. Belum ada keputusan stack atau approval UX. Instruksi berhenti sebelumnya tersimpan sebagai riwayat di bawah.
+Status terkini: spesifikasi D2 disetujui eksplisit; discovery completed. Pengguna kemudian mengizinkan UX prototype dan Lavish lokal; UX pada review R3. Belum ada keputusan stack atau approval UX. Instruksi berhenti sebelumnya tersimpan sebagai riwayat di bawah.
 
 ## Fakta terkonfirmasi dari pengguna
 - Pengguna awal satu keluarga, termasuk orang tua dan anak; peluang banyak keluarga di masa depan dengan isolasi data keluarga.
@@ -60,3 +60,8 @@ Status terkini: spesifikasi D2 disetujui eksplisit; discovery completed. Penggun
 - Pengguna bingung istilah “sejak sah”, meminta kata yang lebih umum. Pesan diterima via poll, bukan approval.
 - R2 mengganti seluruh teks UI “sah” dengan selesai/disetujui Parent sesuai konteks; perilaku D2 tidak berubah.
 - Bukti `docs/ux/R2-review.md`; hash aktif `docs/ux/revision.json`; arsip R1 `docs/ux/history/R1.html`. Tetap berhenti pada review, tanpa approval UX atau architecture.
+
+## Feedback UX-002 → R3
+- Pengguna meminta revisi interaksi persetujuan reward Parent: saldo/biaya/kekurangan sebelum keputusan, disabled bila kurang, penolakan tetap tersedia, pending dipertahankan, dapat diputuskan nanti dan perubahan data ditinjau sebelum diterapkan. Bukan approval UX.
+- Konsisten dengan D2 F-14/F-15/F-16, tanpa perubahan aturan bisnis/reservasi. R2 diarsipkan `docs/ux/history/R2.html`; R3 aktif dan hash `docs/ux/revision.json`.
+- Bukti interaksi, mobile/desktop, dua tab asli, timing/fokus dan Lavish sandbox: `docs/ux/R3-review.md`. Tetap berhenti pada review tanpa architecture.

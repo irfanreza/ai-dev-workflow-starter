@@ -1,0 +1,54 @@
+- StaticText "Lavish"
+- StaticText "EDITOR"
+- button "Annotate" [ref=e1]
+  - StaticText "Annotate"
+- button "Hide conversation" [expanded=true, ref=e2]
+- button "More" [expanded=false, ref=e3]
+- Iframe [ref=e4]
+  - dialog "Putuskan permintaan reward"
+    - StaticText "RUANG BERSAMA"
+    - heading "Putuskan permintaan reward" [level=2, ref=e10]
+    - button "Tutup dialog" [ref=e11]
+      - StaticText "×"
+    - generic
+      - heading "Sarapan menu favorit" [level=3, ref=e12]
+      - status
+        - StaticText "Informasi diperbarui. Periksa saldo, biaya, dan status terbaru sebelum memilih keputusan."
+      - DescriptionList
+        - term "Anggota"
+        - definition
+          - StaticText "Nara"
+        - term "Status"
+        - definition
+          - StaticText "Menunggu keputusan"
+        - term "Saldo terbaru"
+        - definition
+          - StaticText "80 poin"
+        - term "Biaya permintaan"
+        - definition
+          - StaticText "80 poin (tersimpan saat pengajuan)"
+        - term "Kekurangan poin"
+        - definition
+          - StaticText "0 poin"
+        - term "Saldo setelah persetujuan"
+        - definition
+          - StaticText "0 poin"
+      - status
+        - StaticText "Saldo mencukupi. Parent dapat menyetujui sekarang atau menolak dengan alasan. Saldo diperiksa lagi sebelum keputusan diterapkan."
+      - paragraph
+        - StaticText "Permintaan tidak mereservasi saldo. Reward belum dijamin sampai Parent menyetujui. Pemenuhan dilakukan manual di luar aplikasi."
+      - paragraph
+        - StaticText "Persetujuan membelanjakan 80 poin dan bersifat final. Tidak ada refund di MVP."
+      - LabelText
+        - StaticText "Alasan (wajib jika menolak)"
+      - textbox "Alasan (wajib jika menolak)" [ref=e13]
+      - group
+        - DisclosureTriangle "Skenario review lokal" [expanded=true]
+          - StaticText "Skenario review lokal"
+        - paragraph
+          - StaticText "Data dummy: simulasikan perubahan saldo dari aktivitas di tab lain. Ini bukan fitur edit saldo produk."
+        - button "Simulasi saldo +60 poin" [ref=e17]
+        - button "Simulasi saldo −80 poin" [ref=e18]
+      - button "Tutup, tetap pending" [ref=e14]
+      - button "Tolak permintaan" [ref=e15]
+      - button "Setujui & belanjakan 80 poin" [ref=e16]

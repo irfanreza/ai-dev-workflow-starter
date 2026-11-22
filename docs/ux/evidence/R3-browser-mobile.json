@@ -1,0 +1,70 @@
+{
+  "viewport": {
+    "width": 360,
+    "height": 800
+  },
+  "results": [
+    {
+      "label": "F-01 / J1 setup, child without email, recovery and inactive login",
+      "status": "PASS"
+    },
+    {
+      "label": "F-03/04/05/17 / J2 task and area validation, archive, blockers",
+      "status": "PASS"
+    },
+    {
+      "label": "F-06/07/09 / J3 direct completion + safe retry + next due",
+      "status": "PASS"
+    },
+    {
+      "label": "F-07/08/10 / J3-J4 pending, overdue, rejection and resubmission",
+      "status": "PASS"
+    },
+    {
+      "label": "F-05/08/11 parent assignee self verification audit, pending locks",
+      "status": "PASS"
+    },
+    {
+      "label": "F-09 once-only completion disappears from active list",
+      "status": "PASS"
+    },
+    {
+      "label": "F-12 / J7 cancellation close, negative preview, reason and correction",
+      "status": "PASS"
+    },
+    {
+      "label": "F-12 changed impact requires fresh confirmation",
+      "status": "PASS"
+    },
+    {
+      "label": "F-12 cancellation blocked after next occurrence submission, even rejected",
+      "status": "PASS"
+    },
+    {
+      "label": "F-13/14 / J6 catalog, stored cost, duplicate pending, no reservation",
+      "status": "PASS"
+    },
+    {
+      "label": "F-15/16 / J6 competing requests, insufficient funds stay pending",
+      "status": "PASS"
+    },
+    {
+      "label": "F-13/15 inactive reward cannot be approved, can be rejected",
+      "status": "PASS"
+    },
+    {
+      "label": "F-02 member cannot manage Parent screens; cross-family denied",
+      "status": "PASS"
+    },
+    {
+      "label": "N-06 failed action is retryable without partial state",
+      "status": "PASS"
+    },
+    {
+      "label": "States and responsive: all pages, all global states, no horizontal overflow",
+      "status": "PASS"
+    }
+  ],
+  "total": 15,
+  "failed": 0
+}

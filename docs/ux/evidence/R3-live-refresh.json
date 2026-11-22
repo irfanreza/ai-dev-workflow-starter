@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "case": "Timer refresh without storage notification or decision click",
+      "status": "PASS"
+    },
+    {
+      "case": "Window focus refreshes latest balance",
+      "status": "PASS"
+    },
+    {
+      "case": "Focus remains meaningful when approval becomes disabled",
+      "status": "PASS"
+    }
+  ],
+  "total": 3,
+  "failed": 0
+}

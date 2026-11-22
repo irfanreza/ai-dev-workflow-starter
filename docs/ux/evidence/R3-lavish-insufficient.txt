@@ -1,0 +1,46 @@
+- StaticText "Lavish"
+- StaticText "EDITOR"
+- button "Annotate" [ref=e1]
+  - StaticText "Annotate"
+- button "Hide conversation" [expanded=true, ref=e2]
+- button "More" [expanded=false, ref=e3]
+- Iframe [ref=e4]
+  - dialog "Putuskan permintaan reward"
+    - StaticText "RUANG BERSAMA"
+    - heading "Putuskan permintaan reward" [level=2, ref=e10]
+    - button "Tutup dialog" [ref=e11]
+      - StaticText "×"
+    - generic
+      - heading "Sarapan menu favorit" [level=3, ref=e12]
+      - status
+      - DescriptionList
+        - term "Anggota"
+        - definition
+          - StaticText "Nara"
+        - term "Status"
+        - definition
+          - StaticText "Menunggu keputusan"
+        - term "Saldo terbaru"
+        - definition
+          - StaticText "20 poin"
+        - term "Biaya permintaan"
+        - definition
+          - StaticText "80 poin (tersimpan saat pengajuan)"
+        - term "Kekurangan poin"
+        - definition
+          - StaticText "60 poin"
+      - status
+        - StaticText "Saldo belum cukup. Kurang 60 poin untuk menyetujui reward ini. Tombol Setujui dinonaktifkan. Permintaan tetap pending dan dapat disetujui nanti jika saldo mencukupi serta reward masih aktif. Anda tetap dapat menolaknya dengan alasan."
+      - paragraph
+        - StaticText "Permintaan tidak mereservasi saldo. Reward belum dijamin sampai Parent menyetujui. Pemenuhan dilakukan manual di luar aplikasi."
+      - paragraph
+        - StaticText "Persetujuan membelanjakan 80 poin dan bersifat final. Tidak ada refund di MVP."
+      - LabelText
+        - StaticText "Alasan (wajib jika menolak)"
+      - textbox "Alasan (wajib jika menolak)" [ref=e13]
+      - group
+        - DisclosureTriangle "Skenario review lokal" [expanded=false]
+          - StaticText "Skenario review lokal"
+      - button "Tutup, tetap pending" [ref=e14]
+      - button "Tolak permintaan" [ref=e15]
+      - button "Setujui & belanjakan 80 poin" [disabled, ref=e16]

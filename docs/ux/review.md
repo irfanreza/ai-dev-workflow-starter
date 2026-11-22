@@ -1,4 +1,4 @@
-Revisi aktif saat ini adalah **R2**; lihat [R2-review.md](R2-review.md). Bukti berikut mencatat persiapan R1 dan tidak menyatakan approval. Arsip HTML R1: `history/R1.html`.
+Revisi aktif saat ini adalah **R3**; lihat [R3-review.md](R3-review.md). Bukti berikut mencatat persiapan R1 dan tidak menyatakan approval. Arsip HTML R1: `history/R1.html`.
 
 # Hasil persiapan review UX R1 (baseline historis)
 
