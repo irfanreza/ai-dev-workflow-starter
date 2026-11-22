@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "project_name": null,
+  "stages": {
+    "discovery": "pending",
+    "ux": "pending",
+    "architecture": "pending",
+    "implementation": "pending",
+    "qa": "pending",
+    "release": "pending"
+  },
+  "evidence": {},
+  "decisions": []
+}
