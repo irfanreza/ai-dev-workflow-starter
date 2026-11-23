@@ -65,3 +65,9 @@ Status terkini: spesifikasi D2 disetujui eksplisit; discovery completed. Penggun
 - Pengguna meminta revisi interaksi persetujuan reward Parent: saldo/biaya/kekurangan sebelum keputusan, disabled bila kurang, penolakan tetap tersedia, pending dipertahankan, dapat diputuskan nanti dan perubahan data ditinjau sebelum diterapkan. Bukan approval UX.
 - Konsisten dengan D2 F-14/F-15/F-16, tanpa perubahan aturan bisnis/reservasi. R2 diarsipkan `docs/ux/history/R2.html`; R3 aktif dan hash `docs/ux/revision.json`.
 - Bukti interaksi, mobile/desktop, dua tab asli, timing/fokus dan Lavish sandbox: `docs/ux/R3-review.md`. Tetap berhenti pada review tanpa architecture.
+
+## WF-CONFLICT-001 — keputusan mempertahankan D2
+- Usulan occurrence langsung dibuat saat “Tandai selesai” meski pending dipakai pengguna hanya untuk menguji penanganan konflik requirement setelah approval.
+- Agen mengidentifikasi konflik F-07/F-09/N-03/U-04 dan dampak terkait, menawarkan A (tetap D2) atau B (revisi scope dengan approval baru), lalu menunggu tanpa mengubah baseline.
+- Pengguna memilih **A**, menegaskan tidak ada perubahan produk sebenarnya. Pertahankan D2 dan R3; tidak membuat D3 atau mengubah occurrence. Pilihan A bukan approval UX.
+- Evidence pengujian manual dan verifikasi hash: `docs/workflow/WF-CONFLICT-001.md`. Resume final review UX R3 via Lavish; status workflow dan approval evidence tetap utuh.
