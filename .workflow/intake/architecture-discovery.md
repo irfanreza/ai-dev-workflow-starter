@@ -148,3 +148,47 @@ Harga sumber resmi diperiksa pada sesi ini. Kurs Rp18.000/USD di bawah adalah as
 - R2 pricing: https://developers.cloudflare.com/r2/pricing/
 
 STOP: tunggu jawaban. Tidak membuat Architecture Draft A1, ADR final, implementation, migration, deployment atau perubahan baseline/approval.
+
+## Kesiapan A1 setelah lima keputusan terakhir pengguna
+
+Status terbaru: kelima pertanyaan putaran sebelumnya telah dijawab. Sumber keputusan pengguna adalah architecture-user-decisions.md. Bagian ini hanya evaluasi/mitigasi agen, bukan desain A1, approval ADR, penerimaan risiko oleh pengguna atau perubahan baseline. Architecture tetap in_progress.
+
+### Kesesuaian baseline dan keputusan
+
+- Target biaya Rp150.000/bulan bukan persetujuan overrun. Estimasi total harus memasukkan pajak, biaya pembayaran, backup/job/transfer, domain bila diperlukan dan cadangan pemakaian. Estimasi melampaui target wajib diajukan, tanpa membeli/mengaktifkan opsi berbayar terlebih dahulu. Harga kandidat pada bagian sebelumnya tetap data penelitian, bukan quotation baru atau pilihan final.
+- Google OIDC Parent dan recovery code offline + verifikasi operator konsisten dengan ruang keputusan A-01. Username/passphrase anak, provisioning operator dan isolasi keluarga tetap berlaku. Tidak perlu mengubah D2 untuk sekadar mengevaluasi mekanisme yang sebelumnya terbuka. Perubahan UI approved tetap harus mengikuti change control.
+- Retensi backup14hari/log7hari ditetapkan pengguna dan sesuai N-02/N-07. Arah agen: terapkan juga pada salinan sementara dan uji restore; catat pengecualian retention provider sebelum memilih. Register penghapusan minimal terpisah tetap diperlukan sampai semua backup yang mungkin berisi keluarga tersebut kedaluwarsa; backup baru tidak boleh memperpanjang umur salinan data yang seharusnya sudah dihapus.
+- Subdomain platform adalah prioritas bersyarat, bukan jaminan memenuhi semua skenario consent/branding Google. Jika tidak memenuhi kebutuhan OAuth pilot, ajukan alternatif domain dan biaya total sebelum memilih; jangan mengubah preferensi menjadi pembelian otomatis.
+- Tidak ada perubahan requirement yang diterapkan. Risiko ketidakmampuan mencapai target dan ambiguitas di bawah tetap terbuka; bukan dinyatakan resolved melalui jawaban pengguna.
+
+### Risiko dan mitigasi yang belum merupakan keputusan pengguna
+
+| ID | Target/risiko | Evaluasi dan mitigasi agen | Status/penerimaan yang diperlukan |
+| --- | --- | --- | --- |
+| AR-01 | RTO24h vs satu developer best effort tanpa pengganti | Target24h tetap berlaku sebagai tujuan pemulihan, bukan SLA. Restore teknis dapat disederhanakan lewat runbook, konfigurasi tersimpan aman, backup terpisah, alert dan latihan; namun tidak mengatasi developer tidak tersedia atau provider down berkepanjangan. Ukur deteksi, respons manusia, provisioning, restore, validasi dan cutover. | Belum ada bukti atau jaminan pencapaian24h. Bila tidak menambah pengganti/otomasi yang memadai, butuh penerimaan eksplisit risiko downtime >24h untuk pilot sebelum klaim kesiapan operasional. |
+| AR-02 | RPO24h vs backup gagal/tidak terpantau | Rekomendasi agen tetap backup konsisten tiap12h, retry otomatis, off-host terenkripsi, alert umur snapshot terakhir dan pemantauan hasil job yang independen. Backup14hari hanya retensi, bukan frekuensi/RPO. Tentukan respons bila umur salinan mendekati24h; tanpa respons manusia/otomasi, risiko kehilangan >24h tetap ada. | Frekuensi12h belum merupakan keputusan pengguna. RPO belum terbukti sampai pengujian snapshot/restore dan penanganan kegagalan. Risiko residual tidak otomatis diterima. |
+| AR-03 | N-05 <=3detik pada19/20 pengukuran vs free-tier | Izin mengevaluasi free-tier bukan izin gagal N-05. Hindari app cold start panjang yang sudah diketahui; DB scale-to-zero/latensi/kuota tetap perlu uji. Profil uji harus mewakili penggunaan pilot termasuk akses setelah idle, bukan hanya warm-up; ukuran data mengikuti D2. | Tidak ada hasil performa. Provider/plan hanya dapat dinyatakan memenuhi setelah bukti; bila gagal, cari alternatif sesuai target atau ajukan change control, bukan menerima diam-diam. |
+| AR-04 | Anggaran vs fallback free-tier | Ukur penggunaan, tetapkan alert sebelum kuota/biaya habis, siapkan backup portabel dan runbook pemindahan. Cadangan biaya harus dihitung; fallback yang bergantung pada upgrade berbayar belum diizinkan. Hard spending stop dapat menyebabkan downtime >24h sehingga bukan solusi otomatis untuk RTO. | Provider, fallback, waktu pemindahan dan total biaya belum dipilih/terbukti. Estimasi >Rp150.000 diajukan terlebih dahulu. Free-tier tanpa SLA tidak menjamin RTO. |
+| AR-05 | Recovery Parent vs operator yang juga tidak tersedia | Recovery code acak kuat, simpan hash saja, verifikasi operator melalui prosedur terdokumentasi, konsumsi sekali pakai secara atomik bersama pengikatan identitas baru, cabut sesi lama, audit minimal dan rotasi kode. Jangan menaruh kode asli di repo/log atau meminta pengguna mengirimnya dalam chat. | Mekanisme dipilih pengguna, detail verifikasi dan latihan masih perlu dirancang nanti. Jika kode hilang dan akses Google juga hilang, jangan menjanjikan bypass; pemulihan manual mengikuti bukti yang nantinya disepakati. |
+| AR-06 | N-06 data dikonfirmasi tetap ada vs RPO24h pada kehilangan database | D2 N-06 menyatakan data yang sudah dikonfirmasi tersimpan tetap ada saat sesi baru dibuka. Restart/redeploy/pergantian sesi harus mempertahankan data committed. Pada kehilangan seluruh storage dan pemulihan snapshot, RPO24h dapat berarti kehilangan data committed sejak snapshot; cakupan disaster vs gangguan biasa belum dinyatakan eksplisit dalam D2. | Potensi ambiguitas requirement, bukan izin menghapus data. Minta klarifikasi cakupan; bila ingin mengecualikan disaster dari N-06, catat melalui change control yang disetujui. Alternatif memperkecil risiko kehilangan lewat penyimpanan durable/replikasi/backup lebih rapat tetap perlu evaluasi biaya dan bukan janji zero loss. |
+
+### Ringkasan kesiapan dan titik berhenti
+
+- Input bisnis/operasional utama untuk menyusun A1 sudah tersedia: anggaran dan batas otorisasi, Google/anak/recovery, retensi, kapasitas operator dan prioritas domain. Database/host/fallback tetap kandidat; framework belum dikunci. Tidak menambah infrastruktur kompleks untuk menutupi ketidakpastian.
+- Kesiapan bersyarat untuk penyusunan draft setelah izin baru, dengan risiko eksplisit dan rencana verifikasi; belum siap approval arsitektur atau release. Penerimaan risiko bukan pengganti uji dan bukan kelulusan AC.
+- Dua hal memerlukan jawaban eksplisit: (1) penerimaan risiko pilot bahwa respons best effort/operator tunggal bisa menyebabkan downtime >24h meski target tetap24h, atau permintaan mitigasi tambahan; (2) klarifikasi cakupan N-06 vs kehilangan data dalam disaster recovery dari snapshot (RPO24h). Tidak menganggap kelima keputusan terbaru sudah menerima dua hal ini.
+- Belum membuat Draft A1, ADR final, kode aplikasi, migration atau deployment. Tidak menjalankan benchmark/restore dan tidak menandai hasilnya lulus. Tidak ada transisi workflow baru; tetap tunggu instruksi pengguna.
+
+## Tindak lanjut dua risiko — titik resume terbaru
+
+- Pengguna menerima eksplisit risiko downtime >24jam khusus pilot ketika operator tunggal tidak tersedia. Target RTO24jam tetap sasaran, bukan SLA, dengan kewajiban monitoring/alert/runbook/restore dan evaluasi ulang sebelum ekspansi. Sumber keputusan terpisah: architecture-user-decisions.md. AR-01 kini diterima hanya pada cakupan tersebut; belum ada hasil uji pemulihan atau penerimaan semua risiko operasional.
+- Untuk AR-06, pengguna memberikan persetujuan prinsip pengecualian kehilangan permanen storage utama dengan RPO24jam. Approval final wording belum ada. Proposal change control docs/workflow/CR-N06-001.md P1 memuat wording N-06 asli, usulan minimal, AC turunan dan dampak UX/Architecture/QA.
+- N-06 D2 asli tetap berlaku sampai perubahan disetujui dan diterapkan secara eksplisit. Tidak ada perubahan PRODUCT, approval evidence, UX R3 atau state. AR-02/AR-03/AR-04/AR-05 tetap memerlukan mitigasi/evaluasi/bukti sesuai cakupan masing-masing; tidak dianggap lolos oleh penerimaan risiko RTO.
+- STOP pada review CR-N06-001 P1. Tunggu approval redaksi final N-06; jangan membuat Draft A1 atau implementation.
+
+## CR-N06-001 P1 approved dan applied — titik resume terbaru
+
+- Pengguna memberikan approval final redaksi P1 dan mengizinkan penerapan terkendali. Teks N-06 sama persis dengan P1 dan hanya cell N-06 pada PRODUCT yang diubah; baseline aktif PRODUCT D2 + CR-N06-001 P1. Evidence approval, tanggal dan sebelum/sesudah tersimpan di docs/workflow/CR-N06-001.md.
+- Addendum docs/workflow/CR-N06-001-AC-ADDENDUM.md memperjelas gangguan biasa (seluruh committed tetap ada) vs kehilangan permanen storage untuk pilot (RPO <=24jam dari backup terakhir yang benar-benar tersedia dan terverifikasi). Bukan perubahan requirement lain atau hasil QA/restore.
+- AR-06 ditangani melalui change control eksplisit, bukan interpretasi diam-diam. Bukti kemampuan pemulihan tetap perlu diperoleh kelak. Penerimaan risiko AR-01/operator tunggal tetap terpisah dengan target desain RTO24jam dan kewajiban mitigasi; performa, anggaran dan integritas tidak dilonggarkan.
+- Approval PRODUCT D2 historis, UX R3/manifest/hash/approval dan state tidak diubah. Architecture tetap in_progress; implementation/QA/release pending. STOP setelah validasi/pelaporan tanpa Draft A1 atau implementation.

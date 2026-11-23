@@ -1,6 +1,6 @@
 # Catatan discovery
 
-Status terkini: Architecture discovery in_progress; pengguna sudah menjawab pertanyaan awal dan mengizinkan pendalaman evaluasi. Keputusan/preferensi pengguna terpisah di `.workflow/intake/architecture-user-decisions.md`; analisis, sumber harga dan pertanyaan tersisa di `.workflow/intake/architecture-discovery.md`. Discovery/UX completed; implementation/QA/release pending. PRODUCT D2, UX R3 dan approval evidence tidak boleh diubah tanpa change control. Belum ada keputusan arsitektur approved. STOP setelah pendalaman dan pertanyaan; jangan membuat Architecture Draft A1 atau implementation sebelum instruksi berikutnya. Catatan sebelumnya di bawah merupakan riwayat.
+Status terkini: Architecture discovery in_progress. CR-N06-001 P1 sudah disetujui final dan diterapkan hanya pada N-06 PRODUCT; baseline aktif PRODUCT D2 + CR-N06-001 P1. Evidence sebelum/sesudah dan approval perubahan di `docs/workflow/CR-N06-001.md`; klarifikasi AC terkait di `docs/workflow/CR-N06-001-AC-ADDENDUM.md`. Approval D2 historis, UX R3/hash/approval dan state tetap utuh. RPO24jam memakai backup tersedia dan terverifikasi; risiko RTO operator tunggal tetap terpisah dengan target24jam. Discovery/UX completed; implementation/QA/release pending. STOP setelah validasi/pelaporan; jangan membuat Draft A1/implementation. Catatan sebelumnya di bawah merupakan riwayat.
 
 ## Fakta terkonfirmasi dari pengguna
 - Pengguna awal satu keluarga, termasuk orang tua dan anak; peluang banyak keluarga di masa depan dengan isolasi data keluarga.
