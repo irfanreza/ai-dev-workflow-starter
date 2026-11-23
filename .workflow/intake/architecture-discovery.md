@@ -192,3 +192,11 @@ Status terbaru: kelima pertanyaan putaran sebelumnya telah dijawab. Sumber keput
 - Addendum docs/workflow/CR-N06-001-AC-ADDENDUM.md memperjelas gangguan biasa (seluruh committed tetap ada) vs kehilangan permanen storage untuk pilot (RPO <=24jam dari backup terakhir yang benar-benar tersedia dan terverifikasi). Bukan perubahan requirement lain atau hasil QA/restore.
 - AR-06 ditangani melalui change control eksplisit, bukan interpretasi diam-diam. Bukti kemampuan pemulihan tetap perlu diperoleh kelak. Penerimaan risiko AR-01/operator tunggal tetap terpisah dengan target desain RTO24jam dan kewajiban mitigasi; performa, anggaran dan integritas tidak dilonggarkan.
 - Approval PRODUCT D2 historis, UX R3/manifest/hash/approval dan state tidak diubah. Architecture tetap in_progress; implementation/QA/release pending. STOP setelah validasi/pelaporan tanpa Draft A1 atau implementation.
+
+## Otorisasi dan handoff Architecture Draft A1 — terbaru
+
+Pengguna secara eksplisit mengizinkan penyusunan A1 dan ADR draft pada23November2026 berdasarkan PRODUCT D2+CR-N06-001 P1/addendum, UX R3 dan architecture-user-decisions.md yang tetap utuh. Dokumen utama docs/ARCHITECTURE-A1.md dilengkapi lampiran data/transaksi, API/security, operasi/biaya, traceability/rencana uji dan tujuh ADR proposed. Izin menyusun bukan approval keputusan atau izin implementasi.
+
+Rekomendasi draft: satu Next.js/Node TypeScript app, managed PostgreSQL18, shared tables+composite FK+RLS, family-row write serialization, ledger/commands atomik, Google OIDC+local child sessions, verified backup12jam dengan retensi14hari/log7hari dan register terpisah. Hosting Railway/Neon/R2/Healthchecks direkomendasikan bersyarat biaya/kuota/performa/OAuth/restore. Estimasi all-in dasar121.500 dan tekanan162.900 adalah asumsi perencanaan yang belum diukur, bukan biaya disetujui. Fallback quota/provider dan domain berbayar belum diizinkan otomatis; risiko operator tidak mencakup semua outage atau RPO loss.
+
+State tetap architecture in_progress, tidak ada ADR approved. Evidence pemeriksaan dokumen di docs/architecture/A1-document-validation.md; bukan bukti test aplikasi/backup/performa. STOP setelah pelaporan untuk review pengguna, tanpa Implementation/migration/deployment.
