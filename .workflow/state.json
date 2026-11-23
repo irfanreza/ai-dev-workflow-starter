@@ -4,7 +4,7 @@
   "stages": {
     "discovery": "completed",
     "ux": "completed",
-    "architecture": "pending",
+    "architecture": "in_progress",
     "implementation": "pending",
     "qa": "pending",
     "release": "pending"

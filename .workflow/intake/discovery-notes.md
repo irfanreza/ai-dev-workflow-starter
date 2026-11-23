@@ -1,6 +1,6 @@
 # Catatan discovery
 
-Status terkini: PRODUCT D2 dan UX R3 disetujui eksplisit; discovery dan UX completed. Evidence UX: `docs/ux/approval.md`. Belum ada keputusan stack; architecture, implementation, QA, release tetap pending. Instruksi terbaru: catat approval, validasi, lalu berhenti tanpa memulai architecture. Catatan sebelumnya di bawah merupakan riwayat.
+Status terkini: Architecture discovery in_progress; pengguna sudah menjawab pertanyaan awal dan mengizinkan pendalaman evaluasi. Keputusan/preferensi pengguna terpisah di `.workflow/intake/architecture-user-decisions.md`; analisis, sumber harga dan pertanyaan tersisa di `.workflow/intake/architecture-discovery.md`. Discovery/UX completed; implementation/QA/release pending. PRODUCT D2, UX R3 dan approval evidence tidak boleh diubah tanpa change control. Belum ada keputusan arsitektur approved. STOP setelah pendalaman dan pertanyaan; jangan membuat Architecture Draft A1 atau implementation sebelum instruksi berikutnya. Catatan sebelumnya di bawah merupakan riwayat.
 
 ## Fakta terkonfirmasi dari pengguna
 - Pengguna awal satu keluarga, termasuk orang tua dan anak; peluang banyak keluarga di masa depan dengan isolasi data keluarga.
