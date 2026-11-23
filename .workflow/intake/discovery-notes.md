@@ -1,6 +1,6 @@
 # Catatan discovery
 
-Status terkini: spesifikasi D2 disetujui eksplisit; discovery completed. Pengguna kemudian mengizinkan UX prototype dan Lavish lokal; UX pada review R3. Belum ada keputusan stack atau approval UX. Instruksi berhenti sebelumnya tersimpan sebagai riwayat di bawah.
+Status terkini: PRODUCT D2 dan UX R3 disetujui eksplisit; discovery dan UX completed. Evidence UX: `docs/ux/approval.md`. Belum ada keputusan stack; architecture, implementation, QA, release tetap pending. Instruksi terbaru: catat approval, validasi, lalu berhenti tanpa memulai architecture. Catatan sebelumnya di bawah merupakan riwayat.
 
 ## Fakta terkonfirmasi dari pengguna
 - Pengguna awal satu keluarga, termasuk orang tua dan anak; peluang banyak keluarga di masa depan dengan isolasi data keluarga.
@@ -71,3 +71,9 @@ Status terkini: spesifikasi D2 disetujui eksplisit; discovery completed. Penggun
 - Agen mengidentifikasi konflik F-07/F-09/N-03/U-04 dan dampak terkait, menawarkan A (tetap D2) atau B (revisi scope dengan approval baru), lalu menunggu tanpa mengubah baseline.
 - Pengguna memilih **A**, menegaskan tidak ada perubahan produk sebenarnya. Pertahankan D2 dan R3; tidak membuat D3 atau mengubah occurrence. Pilihan A bukan approval UX.
 - Evidence pengujian manual dan verifikasi hash: `docs/workflow/WF-CONFLICT-001.md`. Resume final review UX R3 via Lavish; status workflow dan approval evidence tetap utuh.
+
+## Approval eksplisit UX R3 — titik berhenti
+- Pengguna menyatakan final review dan approval R3 untuk alur Parent/Member, tugas, verifikasi, poin, reward dan koreksi. Kutipan lengkap: `docs/ux/approval.md`.
+- Hash yang dihitung ulang dan disetujui: `512aa9f01784a0a7fb0b69e458abaa892740d73acbbc887725c9ed9ddcb1328b`; cocok dengan manifest R3. Prototype dan D2 tidak diubah.
+- Catat UX completed melalui `scripts/workflow.py transition` dengan evidence approval, lalu validasi. Discovery tetap completed; architecture/implementation/QA/release tetap pending.
+- STOP setelah pelaporan. Approval UX bukan izin memulai architecture; tunggu instruksi pengguna berikutnya.

@@ -3,7 +3,7 @@
   "project_name": "household-task-management",
   "stages": {
     "discovery": "completed",
-    "ux": "waiting_approval",
+    "ux": "completed",
     "architecture": "pending",
     "implementation": "pending",
     "qa": "pending",
@@ -11,7 +11,7 @@
   },
   "evidence": {
     "discovery": "approved: User explicitly approved household-task-management PRODUCT D2 including MVP, Must/Should/Could, acceptance criteria, U-01 through U-05, non-goals and risks. Evidence: docs/PRODUCT-D2-APPROVAL.md; spec: docs/PRODUCT.md; baseline commit: 150b888. User instructed stop after validation; do not start UX.",
-    "ux": "Prototype R3 prepared for review after user feedback UX-002: live reward balance/cost/deficit preview, disabled insufficient approval, pending preserved, stale-decision guard. Consistent with PRODUCT D2 F-14/F-15/F-16; not approved. Evidence: docs/ux/feedback.md and docs/ux/R3-review.md; artifact/hash: docs/ux/revision.json; R2 archive: docs/ux/history/R2.html. Stop at UX review; architecture remains pending."
+    "ux": "approved: User explicitly approved final UX prototype R3 for household-task-management, including Parent/Member, tasks, verification, points, rewards and corrections. Artifact: docs/ux/prototype/index.html; SHA-256: 512aa9f01784a0a7fb0b69e458abaa892740d73acbbc887725c9ed9ddcb1328b, recalculated and matched docs/ux/revision.json. Evidence: docs/ux/approval.md. Stop after validation; do not start architecture."
   },
   "decisions": []
 }
