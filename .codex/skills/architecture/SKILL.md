@@ -1,6 +1,18 @@
 ---
 name: architecture
-description: Evaluate technology choices and produce approved technical architecture and ADRs.
+description: Design implementable architectures with capacity assumptions and ADRs, deferring infrastructure providers when safe.
 ---
 # Architecture
-Compare no-backend vs backend, database needs and SQL/NoSQL trade-offs, frontend and backend frameworks, hosting, auth, tenancy, data schema, API contracts, reliability, observability, security and deployment. Select only what the product needs. Document decisions using docs/DECISION-TEMPLATE.md and obtain explicit approval before implementation.
+Produce an implementable, preferably vendor-neutral design using docs/ARCHITECTURE-TEMPLATE.md. Evaluate no-backend vs backend, database/SQL/NoSQL needs, runtime/frameworks, auth, tenancy, data model, API contracts, transaction boundaries, reliability, observability and security. Vendor-neutral does not mean leaving implementation-critical technology or contracts undecided. Select only what the product needs.
+
+## Capacity planning
+State assumed traffic, active concurrent users versus in-flight requests, average/peak request rate, data size/growth/retention, estimated CPU/RAM/storage ranges, formulas, confidence and validity limits. Separate facts, estimates and measured evidence; do not invent benchmarks. Scale the analysis to the product, marking non-applicable fields with reasons. Compare realistic infrastructure classes and trade-offs, not a mandatory provider shortlist.
+
+## Decision boundary and approval
+Define required infrastructure capabilities for durability, transactions, scheduling, backups, recovery, RPO/RTO, security and observability now; leave provider-specific implementation to deployment planning where feasible. Include verification plans and residual risks. A contractual capability must be realistically achievable, not an unsupported placeholder.
+
+Cloud provider, paid plan, region and current pricing are normally deployment decisions. Advance only the affected decision when a concrete implementation or mandatory-test dependency, user hard constraint, or evidenced material feasibility conflict requires it. Record the requirement, affected contract/test, evidence, alternatives and why deferral is unsafe. Valid examples: code depends on a provider-specific API/runtime; a mandatory test requires a capability unavailable in a representative local environment; a user mandates a provider or residency constraint; evidence shows resource/durability needs conflict with a hard budget. Invalid reasons: unknown prices, possible discounts/free-tier quotas for an unselected candidate, or a generic claim that feasibility needs vendor research. Price uncertainty alone is not a blocker without evidence of material conflict with a hard budget or requirement. Resolve such conflicts explicitly; do not use feasibility as a blanket research gate. User-requested exploratory vendor research is not automatically an Architecture approval prerequisite.
+
+For CLI tools, libraries, local/offline apps or projects without managed deployment, hosting/provider selection may be not applicable. Record why and which requirements still apply; not applicable cannot waive durability, security, testing or release obligations.
+
+Record significant choices in docs/DECISION-TEMPLATE.md, separating design/capacity/deployment scope and user constraints from agent proposals. Deferred decisions need an owner, reason, due gate and required evidence; deferred verification also states whether it blocks QA, Release, both or neither. Mandatory QA criteria cannot be relabeled release-only without explicit approval of the requirement change. Obtain explicit architecture approval before implementation. Provider selection may remain open when the design is implementable and no deployment dependency blocks coding/testing. Planned benchmarks and deployment checks are not completed evidence; production readiness remains a separate gate. Approval does not override a user's instruction to stop or authorize purchases/deployment.

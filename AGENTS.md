@@ -16,6 +16,8 @@ Rules:
 - Separate user feedback, revisions, and final approval. Do not treat "send feedback" as approval.
 - Save approved UX artifacts and an integrity hash; require reapproval if the approved artifact changes.
 - Capture significant technical decisions as ADRs; obtain explicit approval for major architecture decisions.
+- Separate Architecture Design, Capacity Planning, and Deployment Planning. Architecture must define implementable contracts and reliability/security/durability requirements; capacity estimates must state assumptions, resource ranges and validity limits without invented benchmarks. Compare infrastructure classes before providers.
+- Defer cloud provider, plan, region and current prices to Deployment Planning; advance only the affected decision for a documented implementation or mandatory-test dependency, user hard constraint, or evidenced material feasibility conflict. Price uncertainty alone is not an Architecture blocker. An approved architecture may support authorized implementation without a final provider when no implementation-blocking deployment dependency remains. Hosting/provider selection may be not applicable with a reason; this cannot waive applicable requirements. Mandatory QA criteria block QA; release-only checks block Release, not QA. Production deployment always requires explicit approval.
 - Implement vertical slices with acceptance tests. Never fabricate test results.
 - Never deploy production, publish private HTML, expose secrets, or run destructive migrations without explicit permission.
 - Record stage evidence via `python scripts/workflow.py transition <stage> <status> [evidence]`. Check `python scripts/workflow.py validate`.

@@ -1,0 +1,214 @@
+diff --git a/AGENTS.md b/AGENTS.md
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -16,6 +16,8 @@
+ - Separate user feedback, revisions, and final approval. Do not treat "send feedback" as approval.
+ - Save approved UX artifacts and an integrity hash; require reapproval if the approved artifact changes.
+ - Capture significant technical decisions as ADRs; obtain explicit approval for major architecture decisions.
++- Separate Architecture Design, Capacity Planning, and Deployment Planning. Architecture must define implementable contracts and reliability/security/durability requirements; capacity estimates must state assumptions, resource ranges and validity limits without invented benchmarks. Compare infrastructure classes before providers.
++- Defer cloud provider, plan, region and current prices to Deployment Planning unless a user hard constraint or architecture feasibility requires an earlier decision; record the reason. An approved architecture may support authorized implementation without a final provider when no implementation-blocking deployment dependency remains. Budget alone is not a provider-selection gate; unresolved design feasibility still requires resolution. Production deployment always requires explicit approval.
+ - Implement vertical slices with acceptance tests. Never fabricate test results.
+ - Never deploy production, publish private HTML, expose secrets, or run destructive migrations without explicit permission.
+ - Record stage evidence via `python scripts/workflow.py transition <stage> <status> [evidence]`. Check `python scripts/workflow.py validate`.
+diff --git a/.codex/skills/workflow-router/SKILL.md b/.codex/skills/workflow-router/SKILL.md
+--- a/.codex/skills/workflow-router/SKILL.md
++++ b/.codex/skills/workflow-router/SKILL.md
+@@ -4,3 +4,5 @@
+ ---
+ # Workflow router
+ Read AGENTS.md, state, intake, and existing specs. Classify as new-product, feature, bugfix, refactor or release. For a new product start discovery and **read the product-discovery skill before responding**. A vague new-product idea requires an interactive blocking-question round before drafting the full specification; do not shortcut this with unconfirmed assumptions. For an existing app assess impact and do not blindly repeat discovery. Do not mark a stage completed without evidence. Use `python scripts/workflow.py status` and `validate`. Pause for explicit approvals. Resume from persisted state after interrupted sessions. Route UI projects through ux-prototype skill.
++
++Separate architecture design and capacity assumptions from deployment planning. Provider/plan/region/pricing may remain deferred unless they block implementability or are explicit user constraints. Route concrete infrastructure selection and purchase/deploy checks to deployment planning under release readiness; prepare that plan earlier when implementation or target-environment QA needs it, recording the reason without advancing the release state early. Architecture completion still needs explicit approval, not a chosen provider. Respect the user's authorization and stop points before implementation or production deployment.
+diff --git a/.codex/skills/architecture/SKILL.md b/.codex/skills/architecture/SKILL.md
+--- a/.codex/skills/architecture/SKILL.md
++++ b/.codex/skills/architecture/SKILL.md
+@@ -1,6 +1,16 @@
+ ---
+ name: architecture
+-description: Evaluate technology choices and produce approved technical architecture and ADRs.
++description: Design implementable architectures with capacity assumptions and ADRs, deferring infrastructure providers when safe.
+ ---
+ # Architecture
+-Compare no-backend vs backend, database needs and SQL/NoSQL trade-offs, frontend and backend frameworks, hosting, auth, tenancy, data schema, API contracts, reliability, observability, security and deployment. Select only what the product needs. Document decisions using docs/DECISION-TEMPLATE.md and obtain explicit approval before implementation.
++Produce an implementable, preferably vendor-neutral design using docs/ARCHITECTURE-TEMPLATE.md. Evaluate no-backend vs backend, database/SQL/NoSQL needs, runtime/frameworks, auth, tenancy, data model, API contracts, transaction boundaries, reliability, observability and security. Vendor-neutral does not mean leaving implementation-critical technology or contracts undecided. Select only what the product needs.
++
++## Capacity planning
++State assumed traffic, active concurrent users versus in-flight requests, average/peak request rate, data size/growth/retention, estimated CPU/RAM/storage ranges, formulas, confidence and validity limits. Separate facts, estimates and measured evidence; do not invent benchmarks. Scale the analysis to the product, marking non-applicable fields with reasons. Compare realistic infrastructure classes and trade-offs, not a mandatory provider shortlist.
++
++## Decision boundary and approval
++Define required infrastructure capabilities for durability, transactions, scheduling, backups, recovery, RPO/RTO, security and observability now; leave provider-specific implementation to deployment planning where feasible. Include verification plans and residual risks. A contractual capability must be realistically achievable, not an unsupported placeholder.
++
++Cloud provider, paid plan, region and current pricing are normally deployment decisions. Evaluate them early only when explicitly constrained by the user or necessary to resolve architectural feasibility; record why, alternatives and the affected implementation contract. Budget is a design constraint, but a pending vendor quote or purchase is not automatically an architecture blocker. Resolve material budget/capability infeasibility rather than hiding it as a deferral.
++
++Record significant choices in docs/DECISION-TEMPLATE.md, separating design/capacity/deployment scope and user constraints from agent proposals. Deferred decisions need an owner, reason, due gate and required evidence. Obtain explicit architecture approval before implementation. Provider selection may remain open when the design is implementable and no deployment dependency blocks coding/testing. Planned benchmarks and deployment checks are not completed evidence; production readiness remains a separate gate. Approval does not override a user's instruction to stop or authorize purchases/deployment.
+diff --git a/.codex/skills/implementation/SKILL.md b/.codex/skills/implementation/SKILL.md
+--- a/.codex/skills/implementation/SKILL.md
++++ b/.codex/skills/implementation/SKILL.md
+@@ -4,3 +4,5 @@
+ ---
+ # Implementation
+ Work one vertical slice at a time. Trace code to approved spec, UX, architecture and acceptance criteria. Add tests and migration plans as needed. Respect module boundaries, validation, security, observability and error handling. Escalate deviations from approved decisions rather than silently changing them.
++
++After explicit architecture approval and authorization to implement, an unselected provider alone is not a blocker. Implement against approved runtime, persistence, auth and infrastructure capability contracts, with local/isolated acceptance tests where appropriate. Escalate only deployment decisions that materially block implementation; keep other provider/plan/region/pricing choices in deployment planning. Do not silently introduce platform-specific dependencies, weaken reliability requirements or treat permission to implement as permission to buy or deploy.
+diff --git a/.codex/skills/qa/SKILL.md b/.codex/skills/qa/SKILL.md
+--- a/.codex/skills/qa/SKILL.md
++++ b/.codex/skills/qa/SKILL.md
+@@ -4,3 +4,5 @@
+ ---
+ # QA
+ Run applicable lint, typecheck, build, unit, integration and end-to-end tests. Validate requirements traceability and architecture boundaries. Check security and dependency risks. Record exact commands, exit codes, failures and limitations. Do not claim a test passed without execution evidence.
++
++Distinguish capacity estimates, implementation test evidence and target-deployment validation. Exercise reliability, durability, security and backup/restore contracts in suitable environments; a local pass does not prove target-provider performance or recovery. If mandatory acceptance criteria need a target environment, request deployment planning while QA is active rather than retroactively blocking architecture for an unselected provider. Record outstanding deployment checks and do not declare required criteria or QA complete without their evidence; all required release checks must pass before release approval.
+diff --git a/.codex/skills/release/SKILL.md b/.codex/skills/release/SKILL.md
+--- a/.codex/skills/release/SKILL.md
++++ b/.codex/skills/release/SKILL.md
+@@ -3,4 +3,6 @@
+ description: Prepare a controlled release with rollback, migration, environment and approval checks.
+ ---
+ # Release
+-Create release readiness report using docs/RELEASE-TEMPLATE.md. Verify tests, configuration, secrets handling, migration strategy and rollback. Do not deploy to production without separate explicit approval.
++Create release readiness report using docs/RELEASE-TEMPLATE.md. Deployment Planning selects provider, plan, region, runtime settings and current all-in costs against approved design/capacity contracts. Verify provider support for transactions, durability, security, backup/restore, RPO/RTO, observability, retention and capacity; resolve deviations through change control. Obtain approval before spending beyond authorized limits.
++
++Prepare deployment planning earlier when requested or needed for implementation/QA feasibility, without adding a new state stage or bypassing stage prerequisites. Verify actual target-environment tests, configuration, secrets handling, migration strategy and rollback for release readiness. Deferred provider decisions are release blockers until resolved, not automatic architecture blockers. Do not deploy to production without separate explicit approval.
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -17,6 +17,18 @@
+ 
+ Human approval is required for product scope, major architecture choices, UX design when applicable, and production release. No stage is marked complete without evidence. Use `python scripts/workflow.py status` and `python scripts/workflow.py validate`.
+ 
++## Architecture, capacity and deployment boundaries
++
++| Work | Output and approval boundary |
++| --- | --- |
++| Architecture Design | Implementable components, stack, data/API/transaction/auth contracts, reliability, security, durability, backup and recovery design. Explicit design approval is required before implementation. |
++| Capacity Planning | Assumptions for traffic/concurrency/request rate/data growth, CPU/RAM/storage ranges and validity limits; estimates are not benchmark results. Compare infrastructure classes. This supports design approval and is refined with evidence later. |
++| Deployment Planning | Provider, plan, region, actual all-in prices and target configuration/validation, normally prepared for release readiness; bring forward only when requested or needed for a binding constraint or implementation/QA feasibility. |
++
++A final provider is not required for architecture approval or authorized implementation when no unresolved deployment dependency blocks implementation. Technology/runtime/database choices still need sufficient specificity to code and test. Budget remains a constraint, not an automatic demand for early vendor quotes; resolve real feasibility conflicts explicitly. Production deployment and spending beyond authorization require explicit approval.
++
++Use [the architecture template](docs/ARCHITECTURE-TEMPLATE.md) and record deferred decisions with owner, reason, due gate and evidence. Deployment Planning is a workstream, not a seventh state stage: keep the existing six stages and use the release template's deployment section. Planning can precede release state activation when a target environment is needed; it does not bypass stage gates. Local/isolated tests support implementation/QA, while mandatory target-environment evidence is still required before the applicable QA/release gate can pass.
++
+ ## UX review: Lavish AXI adapter
+ The workflow owns requirements, feedback tracking, and approval. [Lavish AXI](https://github.com/kunchenguid/lavish-axi) is an optional third-party local browser review tool, **not** a bundled dependency. Review the tool and approve installation before using:
+ ```bash
+diff --git a/docs/DECISION-TEMPLATE.md b/docs/DECISION-TEMPLATE.md
+--- a/docs/DECISION-TEMPLATE.md
++++ b/docs/DECISION-TEMPLATE.md
+@@ -1,4 +1,10 @@
+ # Architecture decision record
++
++- Status (proposed / approved / deferred):
++- Scope (architecture design / capacity / deployment):
++- User hard constraint vs agent recommendation:
++- Required decision gate and implementation-blocking reason, if any:
++- If deferred: owner, reason, due gate and evidence needed. Deferred is not approved.
+ 
+ ## Context and constraints
+ ## Options and trade-offs
+diff --git a/docs/RELEASE-TEMPLATE.md b/docs/RELEASE-TEMPLATE.md
+--- a/docs/RELEASE-TEMPLATE.md
++++ b/docs/RELEASE-TEMPLATE.md
+@@ -5,6 +5,16 @@
+ ## Test commands and results
+ ## Security and dependency checks
+ ## Migration and rollback plan
+-## Deployment environment
++## Deployment Planning and environment
++- Approved design/capacity baseline and required infrastructure capabilities:
++- Provider, plan, region and reason for selection (or unresolved decision):
++- Actual dated all-in estimate: app, data, storage, backup/verification, auth, monitoring, transfer, domain, tax/payment/FX assumptions and contingency:
++- Authorized budget/spend and approval required for any excess:
++- Capacity assumptions versus measured target-environment evidence:
++- Durability, transactions, security, backup/restore verification, RPO/RTO and retention evidence:
++- Provider quotas, failure modes, monitoring/alerts and fallback:
++- Runtime/environment configuration, secrets and ownership:
++- Outstanding deployment decisions and release blockers:
++- If planned before release: current stage, reason and authorization; no implicit stage transition or deployment permission.
+ ## Known limitations
+ ## Production approval (required before deployment)
+diff --git a/docs/ACCEPTANCE.md b/docs/ACCEPTANCE.md
+--- a/docs/ACCEPTANCE.md
++++ b/docs/ACCEPTANCE.md
+@@ -26,6 +26,10 @@
+ - [ ] Frontend/backend/database needs are evaluated rather than assumed.
+ - [ ] Technology options, data model, API contracts, security and reliability are assessed.
+ - [ ] ADRs and explicit approval exist for major decisions.
++- [ ] Architecture Design, Capacity Planning and Deployment Planning have distinct decision boundaries; no final provider is required unless a user constraint or implementation-blocking feasibility issue justifies it.
++- [ ] Capacity assumptions include traffic, active concurrency/in-flight requests, average/peak request rate, data growth and CPU/RAM/storage estimates with formulas and validity limits; estimates are not fabricated benchmarks.
++- [ ] Infrastructure classes and trade-offs are assessed while reliability, RPO/RTO, security, backup and durability remain required design contracts.
++- [ ] Deferred decisions record owner, reason, due gate and evidence; pending vendor quotes alone do not block architecture approval or authorized implementation.
+ 
+ ## Implementation and QA
+ - [ ] Vertical slices trace to acceptance criteria.
+@@ -35,10 +39,15 @@
+ ## Release
+ - [ ] Environment, migration, rollback and security readiness are documented.
+ - [ ] Production deployment requires separate explicit approval.
++- [ ] Deployment Planning resolves provider/plan/region/current all-in costs, validates required infrastructure capabilities and target evidence, and obtains approval for spending beyond authorization.
++- [ ] Target-environment checks are not claimed passed from capacity estimates or local tests; mandatory QA/release criteria remain evidence-gated.
+ 
+ ## End-to-end evaluation scenarios
+ 1. Browser-only offline tool: no backend/database unless justified.
+ 2. Full-stack multi-user product: schema, migrations, API, auth, tests.
+ 3. Existing project feature: impact analysis, targeted plan and regression tests.
++4. No provider constraint: approve an implementable design/capacity envelope with provider deferred, then start only authorized implementation; resolve vendor and target checks by their due gate.
++5. Binding provider/runtime constraint: resolve its architectural impact early with reasons; do not defer an implementation-blocking contract.
++6. Budget guidance without purchase: present capacity assumptions and infrastructure classes without a vendor-price approval bottleneck; escalate real feasibility conflicts and require explicit production deployment approval.
+ 
+ **Important:** These are target criteria, not claims of completed E2E validation.
+diff --git a/docs/ARCHITECTURE-TEMPLATE.md b/docs/ARCHITECTURE-TEMPLATE.md
+new file mode 100644
+--- /dev/null
++++ b/docs/ARCHITECTURE-TEMPLATE.md
+@@ -0,0 +1,50 @@
++# Architecture design and capacity plan
++
++- Revision / status (draft or explicitly approved):
++- Approved product, UX and change-control baseline references:
++- User decisions versus agent proposals:
++
++## Architecture Design
++### System overview and component diagram
++### Runtime, frameworks and persistence choices with alternatives
++### Data model, ownership/tenancy, relations and constraints
++### API contracts, auth, authorization and session management
++### Transaction boundaries, concurrency and idempotency
++### Reliability, durability, security and threat scenarios
++### Backup, verified restore, monitoring, deletion and retention contracts
++### RPO/RTO targets, residual risks and verification plan
++### Traceability to requirements and acceptance criteria
++
++Define implementable contracts rather than placeholders. Prefer provider-neutral interfaces, but choose implementation-critical technologies. Treat any user-mandated provider as a constraint; explain when an early provider decision is necessary. Scale detail to the product and mark non-applicable sections with reasons.
++
++## Capacity Planning
++Every value is a confirmed fact, explicit assumption, estimate or measured result with provenance. Do not invent benchmark results. State average, peak and stress scenarios; active users are not automatically simultaneous requests.
++
++| Dimension | Input/assumption and unit | Derivation or evidence | Estimated range/confidence | Validity limit / revisit trigger |
++| --- | --- | --- | --- | --- |
++| Traffic pattern and average/peak active concurrency | | | | |
++| Average/peak requests per second and in-flight requests | | | | |
++| Payload sizes and network transfer | | | | |
++| Initial data, growth, indexes and retention | | | | |
++| CPU and RAM, including background/verification work | | | | |
++| Primary/temp/backup storage and growth | | | | |
++
++Use workload formulas where applicable, e.g. peak requests/second = active users x actions/minute x requests/action / 60; in-flight requests depend on rate and latency. State uncertainty and assumptions instead of false precision. Benchmarks refine estimates during implementation/QA.
++
++### Infrastructure classes and trade-offs
++Compare the smallest realistic classes (such as local-only, single durable server, application plus SQL service, or managed/serverless platform) against capability/resource needs, failure modes and operational effort. Do not default to provider names or complex infrastructure. Record budget as guidance or a hard constraint, and distinguish affordability/feasibility risks from a deferred vendor quote.
++
++## Decision register and Deployment Planning handoff
++| Decision | Scope | Disposition (proposed/approved/deferred) | Implementation blocker and reason | Owner / due gate | Required evidence |
++| --- | --- | --- | --- | --- | --- |
++
++Provider, paid plan, region and current prices may be deferred unless user constraints or feasibility require them now. Handoff lists required capabilities, capacity bounds, reliability/security/backup contracts and tests the future deployment must satisfy. Budget or provider uncertainty is not an automatic blocker, but unresolved design feasibility cannot be hidden by deferral.
++
++## ADRs, verification and approval
++- Design/ADR decisions requiring approval:
++- Local/isolated tests and target-environment checks, with due gates:
++- Deferred decisions that genuinely block implementation:
++- Risks accepted by the user versus proposed mitigations:
++- Explicit approval statement, reviewer, date and exact revision:
++
++Architecture may be approved without a provider when implementable and free of unresolved implementation-blocking deployment dependencies. Approval is not evidence of achieved performance/RPO/RTO, authorization to purchase/deploy, or permission to disregard a user stop instruction. Deployment Planning uses docs/RELEASE-TEMPLATE.md and resolves remaining choices before the applicable QA/release gate. Production deployment requires separate explicit approval.

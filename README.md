@@ -17,6 +17,18 @@ Discovery → UX (if UI exists) → Architecture → Implementation → QA → R
 
 Human approval is required for product scope, major architecture choices, UX design when applicable, and production release. No stage is marked complete without evidence. Use `python scripts/workflow.py status` and `python scripts/workflow.py validate`.
 
+## Architecture, capacity and deployment boundaries
+
+| Work | Output and approval boundary |
+| --- | --- |
+| Architecture Design | Implementable components, stack, data/API/transaction/auth contracts, reliability, security, durability, backup and recovery design. Explicit design approval is required before implementation. |
+| Capacity Planning | Assumptions for traffic/concurrency/request rate/data growth, CPU/RAM/storage ranges and validity limits; estimates are not benchmark results. Compare infrastructure classes. This supports design approval and is refined with evidence later. |
+| Deployment Planning | Provider, plan, region, actual all-in prices and target configuration/validation, normally prepared for release readiness; bring forward only when requested or needed for a binding constraint or implementation/QA feasibility. |
+
+A final provider is not required for architecture approval or authorized implementation when no unresolved deployment dependency blocks implementation. Technology/runtime/database choices still need sufficient specificity to code and test. Advance a provider decision only for a documented implementation or mandatory-test dependency, user hard constraint, or evidenced material feasibility conflict; unknown prices alone do not qualify. Budget remains a constraint, but missing quotes are not proof of infeasibility. Production deployment and spending beyond authorization require explicit approval.
+
+Use [the architecture template](docs/ARCHITECTURE-TEMPLATE.md) and record deferred decisions with owner, reason, due gate and evidence. Deployment Planning is a workstream, not a seventh state stage: keep the existing six stages and use the release template's deployment section. Planning can precede release state activation when a target environment is needed; it does not bypass stage gates. Hosting/provider selection may be not applicable for CLI tools, libraries, local/offline apps or projects without managed deployment, with a reason that does not waive applicable requirements. Deferred verification records owner, due gate, evidence and QA/Release blocking status. Mandatory QA criteria need evidence before QA completed; release-only target checks do not block QA. Prepare planning early if mandatory testing actually depends on a target environment, without changing requirement gates silently.
+
 ## UX review: Lavish AXI adapter
 The workflow owns requirements, feedback tracking, and approval. [Lavish AXI](https://github.com/kunchenguid/lavish-axi) is an optional third-party local browser review tool, **not** a bundled dependency. Review the tool and approve installation before using:
 ```bash
